@@ -1,0 +1,22 @@
+-- :help options
+local opt = vim.opt                   -- to set options
+-- opt.syntax = "enable"
+opt.hidden = true                     -- required to keep multiple buffers open
+opt.number = true
+opt.relativenumber = true             -- show line numbers
+opt.wrap = true                       -- long lines will not be displayed as just one
+opt.linebreak = true                  -- stop words being broken on wrap
+opt.encoding = "utf-8"                -- set default encoding to UTF-8
+opt.mouse = "a"                       -- enable mouse
+opt.clipboard = "unnamedplus"         -- copy paste between vim and everything else
+opt.splitright = true                 -- put new windows right of current
+opt.splitbelow = true                 -- put new windows below current
+opt.shiftwidth = 4                    -- size of an indent
+opt.tabstop = 4
+opt.expandtab = false                 -- use tabs, not spaces
+opt.smartindent = true                -- insert indents automatically
+opt.autoindent = true
+opt.hlsearch = false                  -- disable hlsearch
+opt.inccommand = "nosplit"            -- show substitutions incrementally
+opt.ignorecase = true                 -- ignore case
+opt.termguicolors = true              --

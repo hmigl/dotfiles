@@ -1,0 +1,25 @@
+alias \
+	ls="ls --color=auto --group-directories-first" \
+	ll="ls -lah --color=auto --group-directories-first" \
+	la="ls -A --color=auto" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto"
+
+alias \
+	cp="cp -iv" \
+	mv="mv -v" \
+	rm="rm -I" \
+	mkdir="mkdir -v" \
+	ytv="yt-dlp -f 22 -i" \
+	yta="yt-dlp -f 140 -i" \
+	ytf="yt-dlp -F"
+
+alias \
+	v="$EDITOR" \
+	r="ranger" \
+	p="pacman" \
+	df="df -h --total" \
+	ka="killall" \
+	ssn="shutdown -h now"
+
+se() { du -a ~/.scripts ~/.config/ | awk '{print $2}' | fzf | xargs -r $EDITOR }

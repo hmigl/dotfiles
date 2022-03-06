@@ -1,0 +1,41 @@
+#
+# WM agnostic bindings
+#
+
+# reload config
+super + Escape
+	killall sxhkd && sxhkd &
+
+super + w
+	brave
+
+super + t
+	torbrowser-launcher
+
+super + shift + w
+	$BROWSER
+
+super + shift + s
+	pavucontrol
+
+super + r
+	$TERMINAL -e ranger
+
+super + g
+	$TERMINAL -e btop --utf-force
+
+# print screen
+Print
+	maim $(date '+%y%m%d-%H%M-%S').png
+
+# print part of screen and save it to clibpoard
+shift + Print
+	maim -s | xclip -selection clibpoard -t image/png
+
+# confirm before running these critical commands:
+super + shift + x
+	prompt "Do you really want to shutdown?" "shutdown -h now"
+
+super + shift + z
+	prompt "Do you really want to reboot?" "reboot"
+
