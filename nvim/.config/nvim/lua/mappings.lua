@@ -27,7 +27,7 @@ keymap('n', '<S-h>', ':bprevious<CR>', opts)
 keymap('n', '<S-l>', ':bnext<CR>', opts)
   -- Tabs
 keymap('n', '<A-Left>', ':tabprevious<CR>', opts)
-keymap('n', '<A-Right>', ':tabNext<CR>', opts)
+keymap('n', '<A-Right>', ':tabnext<CR>', opts)
 
 -- Resize splits
 keymap('n', '<C-Left>', ':vertical resize +2<CR>', opts)
@@ -54,3 +54,6 @@ keymap('v', '<A-k>', ':m \'<-2<CR>==gv=gv', opts)
 keymap('n', '<leader>ff', '<cmd>Telescope find_files<CR>', opts)
 keymap('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', opts)
 
+-- Spell check
+keymap('n', '<F3>', ':setlocal spell! spelllang=en_us<CR>', opts)
+keymap('n', '<F4>', ':set spelllang=pt_br<CR>', opts)
