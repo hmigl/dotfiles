@@ -54,6 +54,13 @@ keymap('v', '<A-k>', ':m \'<-2<CR>==gv=gv', opts)
 keymap('n', '<leader>ff', '<cmd>Telescope find_files<CR>', opts)
 keymap('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', opts)
 
--- Spell check
-keymap('n', '<F3>', ':setlocal spell! spelllang=en_us<CR>', opts)
-keymap('n', '<F4>', ':set spelllang=pt_br<CR>', opts)
+-- Built-in spell check
+keymap('n', '<leader>o', ':setlocal spell! spelllang=en_us<CR>', opts)
+keymap('n', '<leader>p', ':set spelllang=pt_br<CR>', opts)
+
+-- Shellcheck
+keymap('n', '<leader>s', ':!clear && shellcheck %<CR>', opts)
+
+-- Global rename
+keymap('n', '<F2>', ':%s//g<Left><Left>', opts)
+
