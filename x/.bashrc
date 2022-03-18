@@ -16,6 +16,7 @@ set -o vi
 
 HISTSIZE= HISTFILESIZE= # Infinite history
 export LESSHISTFILE="-" # No history on less
+HISTFILE=$HOME/.bash_history
 
 # Bash prompt
 export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
@@ -23,6 +24,6 @@ export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput se
 # Aliases
 alias la='ls -al --color=auto --group-directories-first' 
 alias ll='ls -l --color=auto --group-directories-first'
-alias l='ls --color=auto --group-directories-first'
+alias ls='ls --color=auto --group-directories-first'
 alias grep='grep --color=auto'
 alias v='nvim'
