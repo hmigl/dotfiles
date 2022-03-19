@@ -9,14 +9,12 @@ local keymap = vim.api.nvim_set_keymap
 --   visual block mode -> "x"
 
 -- Set space as leader key
-keymap('n', '<Space>', '<NOP>', { noremap = true, silent = true })
+keymap('n', '<Space>', '<NOP>', opts)
 vim.g.mapleader = ' '
 
--- Explore file tree with nvim-tree
-keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
-keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', { noremap = true, silent = true })
-
 -- Navigation
+  -- NvimTree
+keymap('n', '<leader>n', ':NvimTreeToggle<CR>', opts)
   -- Splits
 keymap('n', '<C-h>', '<C-w>h', opts)
 keymap('n', '<C-j>', '<C-w>j', opts)
@@ -26,8 +24,8 @@ keymap('n', '<C-l>', '<C-w>l', opts)
 keymap('n', '<S-h>', ':bprevious<CR>', opts)
 keymap('n', '<S-l>', ':bnext<CR>', opts)
   -- Tabs
-keymap('n', '<A-Left>', ':tabprevious<CR>', opts)
-keymap('n', '<A-Right>', ':tabnext<CR>', opts)
+keymap('n', '<A-h>', ':tabprevious<CR>', opts)
+keymap('n', '<A-l>', ':tabnext<CR>', opts)
 
 -- Resize splits
 keymap('n', '<C-Left>', ':vertical resize +2<CR>', opts)
@@ -63,4 +61,3 @@ keymap('n', '<leader>s', ':!clear && shellcheck %<CR>', opts)
 
 -- Global rename
 keymap('n', '<F2>', ':%s//g<Left><Left>', opts)
-
