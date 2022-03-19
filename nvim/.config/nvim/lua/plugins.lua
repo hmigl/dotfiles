@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
   -- colorschemes
   use ("cocopon/iceberg.vim")
   use ("folke/tokyonight.nvim")
+  use ("lunarvim/darkplus.nvim")
 
   -- nvim-cmp
   use ({
