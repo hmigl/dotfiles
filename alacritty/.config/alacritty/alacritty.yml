@@ -9,12 +9,11 @@
 
 window:
   padding:
-  # Blank space added around the window in pixels. This padding is scaled
-  # by DPI and the specified value is always added at both opposing sides.
     x: 6
     y: 6
-
   dynamic_padding: false
+
+  opacity: 0.95
 
 scrolling:
   history: 10000
@@ -35,12 +34,10 @@ font:
   size: 12.0
 
 schemes:
-
   tokyodark: &tokyodark
      primary:
       background: '0x1a1b26'
       foreground: '0xc0caf5'
-
      normal:
       black:   '0x15161E'
       red:     '0xf7768e'
@@ -50,7 +47,6 @@ schemes:
       magenta: '0xbb9af7'
       cyan:    '0x7dcfff'
       white:   '0xa9b1d6'
-
      bright:
        black:   '0x414868'
        red:     '0xf7768e'
@@ -60,7 +56,6 @@ schemes:
        magenta: '0xbb9af7'
        cyan:    '0x7dcfff'
        white:   '0xc0caf5'
-
      indexed_colors:
        - { index: 16, color: '0xff9e64' }
        - { index: 17, color: '0xdb4b4b' }
@@ -69,7 +64,6 @@ schemes:
     primary:
       background: '#161821'
       foreground: '#d2d4de'
-
     normal:
       black:   '#161821'
       red:     '#e27878'
@@ -79,7 +73,6 @@ schemes:
       magenta: '#a093c7'
       cyan:    '#89b8c2'
       white:   '#c6c8d1'
-
     bright:
       black:   '#6b7089'
       red:     '#e98989'
@@ -94,7 +87,6 @@ schemes:
     primary:
       background: '#1e1e1e'
       foreground: '#cccccc'
-
     normal:
       black:   '#000000'
       red:     '#cd3131'
@@ -104,7 +96,6 @@ schemes:
       magenta: '#bc3fbc'
       cyan:    '#11a8cd'
       white:   '#e5e5e5'
-
     bright:
       black:   '#666666'
       red:     '#f14c4c'
@@ -121,7 +112,6 @@ schemes:
       foreground:        '#ebdbb2'
       bright_foreground: '#fbf1c7'
       dim_foreground:    '#a89984'
-
     bright:
       black:   '#928374'
       red:     '#fb4934'
@@ -131,7 +121,6 @@ schemes:
       magenta: '#d3869b'
       cyan:    '#8ec07c'
       white:   '#ebdbb2'
-
     normal:
       black:   *gruvbox_dark_bg
       red:     '#cc241d'
@@ -147,26 +136,9 @@ schemes:
 #colors: *tokyodark
 colors: *darkblue
 
-window:
-  opacity: 0.95
-
 cursor:
   style:
-    # Cursor shape
-    #
-    # Values for `shape`:
-    #   - ▇ Block
-    #   - _ Underline
-    #   - | Beam
     shape: Block
-    #
-    # Cursor blinking state
-    #
-    # Values for `blinking`:
-    #   - Never: Prevent the cursor from ever blinking
-    #   - Off: Disable blinking by default
-    #   - On: Enable blinking by default
-    #   - Always: Force the cursor to always blink
     blinking: Never
 
 key_bindings:
