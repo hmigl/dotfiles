@@ -76,6 +76,13 @@ return require('packer').startup(function(use)
 	  config = get_setup("toggleterm"),
   })
 
+  use({
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+})
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
