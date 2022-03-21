@@ -1,0 +1,50 @@
+# Basic settings
+set ignorecase true
+set scrolloff 10
+
+# Functions
+cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
+
+cmd open ${{
+    case $(file --mime-type "$f" -b) in
+      text/*) $EDITOR $fx;;
+	  *) $OPENER "$f";;
+    esac
+}}
+
+cmd delete ${{
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	printf "%s\n\t" "$fx"
+	printf "delete?[y/N]"
+	read ans
+	[ $ans = "y" ] && rm -rf -- $fx
+}}
+
+cmd extract ${{
+    set -f
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.zip) unzip $f;;
+        *.rar) unrar x $f;;
+        *.7z) 7z x $f;;
+    esac
+}}
+
+# Bindings
+map <c-n> push :mkdir<space>
+map A rename # at the very end
+map c push A<c-u> # new rename
+map I push A<c-a> # at the very beginning
+map i push A<a-b><a-b><a-f> # before extention
+map a push A<a-b> # after extention
+map . set hidden!
+map D delete
+map E extract
+map V push :!nvim<space>
+map R reload
+map <enter> shell
+map W $setsid -f $TERMINAL >/dev/null 2>&1
+map C clear
