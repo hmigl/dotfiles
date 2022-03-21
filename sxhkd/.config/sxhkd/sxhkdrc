@@ -19,7 +19,7 @@ super + shift + s
 	pavucontrol
 
 super + r
-	$TERMINAL -e ranger
+	$TERMINAL -e lf
 
 super + g
 	$TERMINAL -e btop --utf-force

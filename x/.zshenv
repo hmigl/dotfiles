@@ -7,6 +7,7 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/.scripts"
 export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="librewolf"
+export OPENER="rifle"
 
 # clean up ~/
 export XDG_DATA_HOME="$HOME/.local/share"
