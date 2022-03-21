@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# chalop - (easily) CHange Alacritty Opacity
+#
+actual=$(awk '$1 == "opacity:" { print $2 }' ~/.config/alacritty/alacritty.yml)
+if [[ $1 == "inc" ]]; then
+  new=$(echo "$actual + 0.01" | bc -lq)
+elif [[ $1 == "dec" ]]; then
+  new=$(echo "$actual - 0.01" | bc -lq)
+elif [[ $1 == "nor" ]]; then
+  new=.95
+else
+  exit 1
+fi
+
+sed -i -- "s/opacity: $actual/opacity: $new/" ~/.config/alacritty/alacritty.yml

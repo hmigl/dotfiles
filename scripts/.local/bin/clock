@@ -1,0 +1,4 @@
+#!/bin/sh
+
+dte="$(date "+%b %d (%a) %I:%M%p" | sed 's/  / /g')"
+echo -e "$dte"
