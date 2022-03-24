@@ -2,7 +2,7 @@
 # WM agnostic bindings
 #
 
-# reload config
+# Reload config
 super + Escape
 	killall sxhkd && sxhkd &
 
@@ -24,18 +24,21 @@ super + r
 super + g
 	$TERMINAL -e btop --utf-force
 
-# print screen
+# Print screen
 Print
 	maim $(date '+%y%m%d-%H%M-%S').png
 
-# print part of screen and save it to clibpoard
+# Print part of screen and save it to clibpoard
 shift + Print
 	maim -s | xclip -selection clibpoard -t image/png
 
-# confirm before running these critical commands:
+# Confirm before running these critical commands:
 super + shift + x
 	prompt "Do you really want to shutdown?" "shutdown -h now"
 
 super + shift + z
 	prompt "Do you really want to reboot?" "reboot"
 
+# Change alacritty opacity
+ctrl + shift {equal,minus,0}
+	chalop {"inc","dec","nor"}
