@@ -1,15 +1,15 @@
-# profile file; runs on login. Environmental variables are set here
+# Environment file; sourced on all invocations
 
-# adds `~/.local/bin` and '~/.scripts' to $PATH
-export PATH="$PATH:$HOME/.local/bin:$HOME/.scripts" 
+# Add `~/.local/bin` to $PATH
+export PATH="$PATH:$HOME/.local/bin"
 
-# default programs
+# Default programs
 export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="librewolf"
 export OPENER="rifle"
 
-# clean up ~/
+# Clean up ~/
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -17,11 +17,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 export GTK2_RC_FILES="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-2.0/gtkrc-2.0"
 export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history"
+export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 
-# disable files
+# Disable files
 export LESSHISTFILE=-
-
-# start graphical server
-if [ "$(tty)" = "/dev/tty1" ]; then
-	pgrep -x dwm || exec startx
-fi

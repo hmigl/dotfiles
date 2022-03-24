@@ -8,7 +8,7 @@ alias \
 alias \
 	cp="cp -iv" \
 	mv="mv -v" \
-	rm="rm -I" \
+	rm="rm -Iv" \
 	mkdir="mkdir -v" \
 	ytv="yt-dlp -f 22 -i" \
 	yta="yt-dlp -f 140 -i" \
@@ -22,4 +22,4 @@ alias \
 	ka="killall" \
 	ssn="shutdown -h now"
 
-se() { du -a ~/.scripts ~/.config/ | awk '{print $2}' | fzf | xargs -r $EDITOR }
+se() { du -a ~/.dotfiles | awk '{print $2}' | fzf | xargs -r $EDITOR }

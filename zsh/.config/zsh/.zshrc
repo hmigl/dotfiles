@@ -5,7 +5,7 @@ PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magent
 
 setopt autocd # Automatically cd into a dir merely by typing its name
 unsetopt beep
-stty stop undef # Disable ctrl-s to freeze terminal.
+stty -ixon <$TTY >$TTY # Disable ctrl-s to freeze terminal.
 setopt interactive_comments
 
 # History in .cache
@@ -39,7 +39,8 @@ function zle-keymap-select () {
     esac
 }
 zle -N zle-keymap-select
-zle-line-init() {
+
+function zle-line-init() {
     zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
     echo -ne "\e[5 q"
 }
