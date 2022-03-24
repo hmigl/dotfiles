@@ -5,7 +5,7 @@
 stty -ixon # Disable ctrl-s and ctrl-q
 
 # Path
-export PATH="$PATH:$HOME/.local/bin:$HOME/.scripts" 
+export PATH="$PATH:$HOME/.local/bin"
 
 # Shopt
 shopt -s autocd # cd into a dir merely by typing its name
