@@ -8,9 +8,8 @@ local keymap = vim.api.nvim_set_keymap
 --   visual mode -> "v"
 --   visual block mode -> "x"
 
--- Set space as leader key
-keymap('n', '<Space>', '<NOP>', opts)
-vim.g.mapleader = ' '
+-- Set leader key
+-- vim.g.mapleader = '\\' (backslash is used by default)
 
 -- Navigation
   -- NvimTree
@@ -21,8 +20,8 @@ keymap('n', '<C-j>', '<C-w>j', opts)
 keymap('n', '<C-k>', '<C-w>k', opts)
 keymap('n', '<C-l>', '<C-w>l', opts)
   -- Buffers
-keymap('n', '<S-h>', ':bprevious<CR>', opts)
-keymap('n', '<S-l>', ':bnext<CR>', opts)
+keymap('n', '<leader>h', ':bprevious<CR>', opts)
+keymap('n', '<leader>l', ':bnext<CR>', opts)
   -- Tabs
 keymap('n', '<A-h>', ':tabprevious<CR>', opts)
 keymap('n', '<A-l>', ':tabnext<CR>', opts)
