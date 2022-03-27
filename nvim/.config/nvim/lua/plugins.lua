@@ -29,6 +29,7 @@ return require('packer').startup(function(use)
   use ("cocopon/iceberg.vim")
   use ("folke/tokyonight.nvim")
   use ("lunarvim/darkplus.nvim")
+  use ("morhetz/gruvbox")
 
   -- nvim-cmp
   use ({
@@ -38,6 +39,7 @@ return require('packer').startup(function(use)
 		  { "hrsh7th/cmp-path" },
 		  { "hrsh7th/cmp-cmdline" },
 		  { "L3MON4D3/LuaSnip" }, -- snippet engine
+		  { "rafamadriz/friendly-snippets" }, -- a bunch of snippets
 		  { "saadparwaiz1/cmp_luasnip" },
 		  { "hrsh7th/cmp-nvim-lsp" }, -- provides lsp completions
 	  },
