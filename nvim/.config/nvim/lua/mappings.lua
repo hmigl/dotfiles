@@ -57,6 +57,3 @@ keymap('n', '<leader>p', ':set spelllang=pt_br<CR>', opts)
 
 -- Shellcheck
 keymap('n', '<leader>s', ':!clear && shellcheck %<CR>', opts)
-
--- Global rename
-keymap('n', '<F2>', ':%s//g<Left><Left>', opts)
