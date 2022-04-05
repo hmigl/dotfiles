@@ -5,3 +5,4 @@ picom &
 sxhkd &
 dwmblocks &
 nitrogen --restore &
+remaps &
