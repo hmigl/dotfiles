@@ -74,11 +74,6 @@ return require('packer').startup(function(use)
     })
 
   use({
-	  "akinsho/toggleterm.nvim",
-	  config = get_setup("toggleterm"),
-  })
-
-  use({
     "numToStr/Comment.nvim",
     config = function()
         require('Comment').setup()
