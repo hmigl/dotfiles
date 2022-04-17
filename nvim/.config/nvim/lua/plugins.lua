@@ -58,7 +58,6 @@ return require('packer').startup(function(use)
 
   -- LSP
   use ("neovim/nvim-lspconfig")
-  use ("williamboman/nvim-lsp-installer")
 
   -- Treesitter
   use ({

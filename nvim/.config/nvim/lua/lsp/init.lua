@@ -3,5 +3,6 @@ if not status_ok then
 	return
 end
 
-require("lsp.lsp-installer")
-require("lsp.handlers").setup()
+require'lspconfig'.clangd.setup{}
+require'lspconfig'.sumneko_lua.setup{}
+require("lsp.lsp-config")
