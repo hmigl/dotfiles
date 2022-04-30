@@ -1,27 +1,29 @@
 local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
+
+-- Set leader key
+-- vim.g.mapleader = '\\' (backslash is used by default)
 
 -- Modes
 --  normal mode -> "n"
 --  insert mode -> "i"
 --  visual mode -> "v"
 --  visual block mode -> "x"
+--  term mode -> "t"
+--  command mode -> "c"
 
--- Set leader key
--- vim.g.mapleader = '\\' (backslash is used by default)
-
--- Shortcutting...
-
--- split navigation
+-- Split navigation
 map('n', '<C-h>', '<C-w>h', opts)
 map('n', '<C-j>', '<C-w>j', opts)
 map('n', '<C-k>', '<C-w>k', opts)
 map('n', '<C-l>', '<C-w>l', opts)
--- buffer navigation
+
+-- Buffer navigation
 map('n', '<leader>h', ':bprevious<CR>', opts)
 map('n', '<leader>l', ':bnext<CR>', opts)
--- tab navigation
+
+-- Tab navigation
 map('n', '<A-h>', ':tabprevious<CR>', opts)
 map('n', '<A-l>', ':tabnext<CR>', opts)
 
@@ -37,10 +39,10 @@ map('n', '<C-q>', ':q<CR>', opts)
 
 -- Move text...
 
--- in normal mode
+-- ...in normal mode
 map('n', '<A-j>', ':m .+1<CR>==', opts)
 map('n', '<A-k>', ':m .-2<CR>==', opts)
--- in visual mode
+-- ...in visual mode
 map('v', '<A-j>', ':m \'>+1<CR>==gv=gv', opts)
 map('v', '<A-k>', ':m \'<-2<CR>==gv=gv', opts)
 
@@ -51,10 +53,8 @@ map('n', '<leader>p', ':set spelllang=pt_br<CR>', opts)
 -- Check file in shellcheck
 map('n', '<leader>s', ':!clear && shellcheck %<CR>', opts)
 
--- Plugin mappings...
+-- PLUGIN
 
 -- Telescope
 map('n', '<leader>ff', '<cmd>Telescope find_files<CR>', opts)
 map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', opts)
--- NvimTree
-map('n', '<leader>n', ':NvimTreeToggle<CR>', opts)
