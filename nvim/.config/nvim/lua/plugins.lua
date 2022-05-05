@@ -32,6 +32,7 @@ return require('packer').startup(function(use)
           { 'nvim-lua/plenary.nvim' },
           { 'nvim-lua/popup.nvim' },
        },
+      config = get_setup("telescope"),
     }
 
    -- Treesitter

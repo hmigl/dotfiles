@@ -48,7 +48,7 @@ map('v', '<A-k>', ':m \'<-2<CR>==gv=gv', opts)
 
 -- Built-in spell check
 map('n', '<leader>o', ':setlocal spell! spelllang=en_us<CR>', opts)
-map('n', '<leader>p', ':set spelllang=pt_br<CR>', opts)
+map('n', '<leader>b', ':set spelllang=pt_br<CR>', opts)
 
 -- Check file in shellcheck
 map('n', '<leader>s', ':!clear && shellcheck %<CR>', opts)
@@ -56,5 +56,7 @@ map('n', '<leader>s', ':!clear && shellcheck %<CR>', opts)
 -- PLUGIN
 
 -- Telescope
-map('n', '<leader>ff', '<cmd>Telescope find_files<CR>', opts)
-map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', opts)
+map('n', '<leader>ff', '<cmd>lua require\'telescope.builtin\'.find_files()<CR>', opts)
+map('n', '<leader>fg', '<cmd>lua require\'telescope.builtin\'.live_grep()<CR>', opts)
+map('n', '<leader>fs', '<cmd>lua require\'telescope.builtin\'.grep_string({ search = vim.fn.input("Grep For > ")})<CR>', opts)
+map('n', '<leader>fb', '<cmd>lua require\'telescope.builtin\'.buffers()<CR>', opts)
