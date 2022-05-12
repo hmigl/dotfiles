@@ -46,14 +46,10 @@ map('n', '<A-k>', ':m .-2<CR>==', opts)
 map('v', '<A-j>', ':m \'>+1<CR>==gv=gv', opts)
 map('v', '<A-k>', ':m \'<-2<CR>==gv=gv', opts)
 
--- Built-in spell check
-map('n', '<leader>o', ':setlocal spell! spelllang=en_us<CR>', opts)
-map('n', '<leader>b', ':set spelllang=pt_br<CR>', opts)
-
 -- Check file in shellcheck
 map('n', '<leader>s', ':!clear && shellcheck %<CR>', opts)
 
--- PLUGIN
+-- Plugin
 
 -- Telescope
 map('n', '<leader>ff', '<cmd>lua require\'telescope.builtin\'.find_files()<CR>', opts)
