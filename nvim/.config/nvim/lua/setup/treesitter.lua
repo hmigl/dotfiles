@@ -7,7 +7,7 @@ configs.setup({
   -- One of "all", "maintained" (parsers with maintainers), or a list of languages
   ensure_installed = {
 	  "c", "cpp", "bash", "make",
-	  "lua", "python", "yaml",
+	  "lua", "python", "yaml", "java",
   },
 
   -- Install languages synchronously (only applied to `ensure_installed`)
