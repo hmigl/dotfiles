@@ -75,7 +75,13 @@ return require('packer').startup(function(use)
    }
 
    use 'tpope/vim-surround'
-   use 'tpope/vim-commentary'
+
+   use {
+      'numToStr/Comment.nvim',
+      config = function()
+        require('Comment').setup()
+      end
+   }
 
    -- Colorschemes
    use 'lunarvim/darkplus.nvim'
