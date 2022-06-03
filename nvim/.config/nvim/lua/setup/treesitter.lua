@@ -6,8 +6,9 @@ end
 configs.setup({
   -- One of "all", "maintained" (parsers with maintainers), or a list of languages
   ensure_installed = {
-	  "c", "cpp", "bash", "make",
-	  "lua", "python", "yaml", "java",
+     "c", "cpp", "bash", "make", "vim",
+     "lua", "python", "yaml", "java",
+     "html", "css", "javascript"
   },
 
   -- Install languages synchronously (only applied to `ensure_installed`)
