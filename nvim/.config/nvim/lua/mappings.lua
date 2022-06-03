@@ -2,8 +2,7 @@ local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 local map = vim.keymap.set
 
--- Set leader key
--- vim.g.mapleader = '\\' (backslash is used by default)
+vim.g.mapleader = ' '
 
 -- Modes
 --  normal mode -> "n"
@@ -56,3 +55,4 @@ map('n', '<leader>ff', '<cmd>lua require\'telescope.builtin\'.find_files()<CR>',
 map('n', '<leader>fg', '<cmd>lua require\'telescope.builtin\'.live_grep()<CR>', opts)
 map('n', '<leader>fs', '<cmd>lua require\'telescope.builtin\'.grep_string({ search = vim.fn.input("Grep For > ")})<CR>', opts)
 map('n', '<leader>fb', '<cmd>lua require\'telescope.builtin\'.buffers()<CR>', opts)
+
