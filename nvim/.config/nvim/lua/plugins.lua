@@ -17,15 +17,12 @@ function get_setup(name)
 end
 
 return require('packer').startup(function(use)
-   -- My plugins here
-
-   -- Packer can manage itself
    use 'wbthomason/packer.nvim'
 
    -- LSP
    use 'neovim/nvim-lspconfig'
 
-   -- Telescope
+   -- telescope
    use {
       'nvim-telescope/telescope.nvim', -- fuzzy finder
        requires = {
@@ -35,7 +32,7 @@ return require('packer').startup(function(use)
       config = get_setup("telescope"),
     }
 
-   -- Treesitter
+   -- treesitter
    use {
       'nvim-treesitter/nvim-treesitter',
       config = get_setup("treesitter"),
@@ -43,7 +40,7 @@ return require('packer').startup(function(use)
    }
    use 'p00f/nvim-ts-rainbow'
 
-   -- Cmp
+   -- cmp
    use {
       'hrsh7th/nvim-cmp',
       requires = {
@@ -83,12 +80,11 @@ return require('packer').startup(function(use)
       end
    }
 
-   -- Colorschemes
+   -- colorschemes
    use 'lunarvim/darkplus.nvim'
    use 'morhetz/gruvbox'
+   use 'folke/tokyonight.nvim'
 
-   -- Automatically set up your configuration after cloning packer.nvim
-   -- Put this at the end after all plugins
    if packer_bootstrap then
       require('packer').sync()
    end

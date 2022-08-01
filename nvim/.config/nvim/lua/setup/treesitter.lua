@@ -8,7 +8,8 @@ configs.setup({
   ensure_installed = {
      "c", "cpp", "bash", "make", "vim",
      "lua", "python", "yaml", "java",
-     "html", "css", "javascript"
+     "html", "css", "javascript",
+     "dockerfile"
   },
 
   -- Install languages synchronously (only applied to `ensure_installed`)

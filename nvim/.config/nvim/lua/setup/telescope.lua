@@ -12,9 +12,9 @@ require('telescope').setup{
     }
   },
   pickers = {
-     find_files = {
-        theme = "ivy",
-     }
+     -- buffers = {
+     --    initial_mode = "normal"
+     -- }
   },
   extensions = {
   }
