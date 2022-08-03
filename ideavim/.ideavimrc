@@ -1,0 +1,60 @@
+" set space as leader key
+let mapleader=" "
+
+" plugins
+set commentary
+set highlightedyank
+set surround
+set NERDTree
+let g:NERDTreeMapActivateNode='l'
+let g:NERDTreeMapJumpParent='h'
+
+" vim options
+set clipboard+=unnamed
+set nohlsearch
+set number relativenumber " show line numbers
+set scrolloff=5 " show a few lines of context around the cursor
+set incsearch " do incremental searching.
+set ignorecase " ignore case in search patterns
+set incsearch " show where search pattern typed so far matches...
+set smartcase " ...but don't ignore case when pattern is uppercase
+
+" idea specific
+set ideajoin
+
+" mappings
+" don't use Ex mode, use Q for formatting.
+map Q gq
+
+" actions
+" git
+nmap <leader>m <Action>(Git.Menu)
+
+" refactoring
+nmap <leader>i <Action>(Generate)
+nmap <leader>rn <Action>(RenameElement)
+nmap ,i <Action>(OptimizeImports)
+
+" movement
+nmap <leader>o <Action>(FileStructurePopup)
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>c <Action>(GoToClass)
+
+" a
+nmap ,r <Action>(Run)
+nmap ,s <Action>(Stop)
+nmap <leader>t <Action>(ActivateTerminalToolWindow)
+
+" use built-ins!
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
+nmap / <Action>(Find)
+
+" useful
+nmap ,, <Action>(QuickJavaDoc)
+nnoremap <C-=> <Action>(EditorIncreaseFontSize)
+nnoremap <C--> <Action>(EditorDecreaseFontSize)
+
+" plugin
+map <leader>e :NERDTree<CR>
+map <leader>ef :NERDTreeFind<CR>
