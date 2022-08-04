@@ -7,13 +7,10 @@ super + Escape
 	killall sxhkd && sxhkd &
 
 super + w
-	brave
+	$BROWSER
 
 super + t
 	torbrowser-launcher
-
-super + shift + w
-	$BROWSER
 
 super + shift + s
 	pavucontrol
@@ -22,7 +19,7 @@ super + r
 	$TERMINAL -e lf
 
 super + g
-	$TERMINAL -e btop --utf-force
+	$TERMINAL -e btop
 
 # Print screen
 Print
@@ -38,7 +35,3 @@ super + shift + x
 
 super + shift + z
 	prompt "Do you really want to reboot?" "reboot"
-
-# Change alacritty opacity
-ctrl + shift {equal,minus,0}
-	chalop {"inc","dec","nor"}
