@@ -11,4 +11,4 @@ run lxsession
 run picom
 run remaps
 run nitrogen --restore
-# run sxhkd
+run sxhkd
