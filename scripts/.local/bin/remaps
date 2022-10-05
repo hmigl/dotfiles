@@ -2,6 +2,8 @@
 
 # Increase key speed via a rate change
 xset r rate 300 50
+# Both shifts enable caps, one disables it
+setxkbmap -option shift:both_capslock_cancel
 # Map the caps lock key to ctrl
 setxkbmap -option caps:ctrl_modifier
 # But when it is pressed only once, treat it as escape
