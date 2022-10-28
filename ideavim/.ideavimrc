@@ -19,14 +19,13 @@ set ignorecase " ignore case in search patterns
 set incsearch " show where search pattern typed so far matches...
 set smartcase " ...but don't ignore case when pattern is uppercase
 
-" idea specific
+" join lines smartly
 set ideajoin
 
 " mappings
 " don't use Ex mode, use Q for formatting.
 map Q gq
 
-" actions
 " git
 nmap <leader>m <Action>(Git.Menu)
 
@@ -34,27 +33,49 @@ nmap <leader>m <Action>(Git.Menu)
 nmap <leader>i <Action>(Generate)
 nmap <leader>rn <Action>(RenameElement)
 nmap ,i <Action>(OptimizeImports)
+" nmap ,q <Action>()
 
-" movement
+" navigation
 nmap <leader>o <Action>(FileStructurePopup)
 nmap <leader>ff <Action>(GotoFile)
-nmap <leader>c <Action>(GoToClass)
+nmap <leader>fi <Action>(GotoImplementation)
+nmap <leader>fg <Action>(FindUsages)
+nmap <leader>c <Action>(GotoClass)
+nmap ]m <Action>(MethodDown)
+nmap [m <Action>(MethodUp)
 
-" a
-nmap ,r <Action>(Run)
-nmap ,s <Action>(Stop)
+" quickly move between windows
+nmap <c-h> <c-w>h
+nmap <c-l> <c-w>l
+nmap <c-k> <c-w>k
+nmap <c-j> <c-w>j
+
+nmap <leader>Q <Action>(ReopenClosedTab)
+
+" total focus
+nmap ,z <Action>(HideAllWindows)
+
+" run code
+nmap \R <Action>(Run)
+nmap \r <Action>(RunClass)
+nmap \s <Action>(Stop)
 nmap <leader>t <Action>(ActivateTerminalToolWindow)
+
+" debug code
+nmap \b <Action>(ToggleLineBreakpoint)
+nmap \d <Action>(Debug)
 
 " use built-ins!
 nmap <C-o> <Action>(Back)
 nmap <C-i> <Action>(Forward)
+
 nmap / <Action>(Find)
 
 " useful
 nmap ,, <Action>(QuickJavaDoc)
-nnoremap <C-=> <Action>(EditorIncreaseFontSize)
-nnoremap <C--> <Action>(EditorDecreaseFontSize)
+nmap <C-=> <Action>(EditorIncreaseFontSize)
+nmap <C--> <Action>(EditorDecreaseFontSize)
 
-" plugin
+" plugin mappings
 map <leader>e :NERDTree<CR>
 map <leader>ef :NERDTreeFind<CR>
