@@ -19,6 +19,8 @@ opt.scrolloff = 5                 -- start scrolling with 5 lines
 opt.signcolumn = "yes"            -- draw an extra column
 opt.wildmode = "longest,list,full" -- better autocompletion
 opt.path:append("**/*")           -- add all subdirectories
+opt.swapfile = false              -- don't use a swapfile
+opt.cursorline = true             -- highlight the current line
 
 -- Highlight on yank
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
