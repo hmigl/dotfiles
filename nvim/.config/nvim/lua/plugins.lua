@@ -12,17 +12,18 @@ if fn.empty(fn.glob(install_path)) > 0 then
       install_path})
 end
 
+-- Easy way to attribute configs to a plugin
 function get_setup(name)
    return string.format('require("setup/%s")', name)
 end
 
 return require('packer').startup(function(use)
-   use 'wbthomason/packer.nvim'
+   use 'wbthomason/packer.nvim' -- Have packer managing itself
 
    -- LSP
    use 'neovim/nvim-lspconfig'
 
-   -- telescope
+   -- Telescope
    use {
       'nvim-telescope/telescope.nvim', -- fuzzy finder
        requires = {
@@ -32,13 +33,13 @@ return require('packer').startup(function(use)
       config = get_setup("telescope"),
     }
 
-   -- treesitter
+   -- Treesitter
    use {
       'nvim-treesitter/nvim-treesitter',
       config = get_setup("treesitter"),
       run = ':TSUpdate',
    }
-   use 'p00f/nvim-ts-rainbow'
+   use 'p00f/nvim-ts-rainbow' -- rainbow parentheses
 
    -- cmp
    use {
@@ -80,10 +81,11 @@ return require('packer').startup(function(use)
       end
    }
 
-   -- colorschemes
+   -- Colorschemes
    use 'lunarvim/darkplus.nvim'
    use 'morhetz/gruvbox'
    use 'folke/tokyonight.nvim'
+   use 'navarasu/onedark.nvim'
 
    if packer_bootstrap then
       require('packer').sync()
