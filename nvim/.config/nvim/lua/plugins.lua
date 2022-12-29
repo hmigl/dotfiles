@@ -47,8 +47,8 @@ require('packer').startup(function(use)
   }
 
   use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end }
-
   use 'tpope/vim-surround' -- Easily surround text objects
+  use { 'windwp/nvim-autopairs', config = get_setup('autopairs') } -- auto closing
 
   -- Add indentation guides even on blank lines
   use { 'lukas-reineke/indent-blankline.nvim', config = get_setup('indent_blankline'), }
