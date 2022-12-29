@@ -8,7 +8,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 -- Easy way to attribute configs to a plugin
-function get_setup(name)
+local function get_setup(name)
   return string.format('require("setup/%s")', name)
 end
 
@@ -52,6 +52,12 @@ require('packer').startup(function(use)
 
   -- Add indentation guides even on blank lines
   use { 'lukas-reineke/indent-blankline.nvim', config = get_setup('indent_blankline'), }
+
+  use { -- Cool status line
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    config = get_setup('lualine'),
+  }
 
   -- Colorshcemes
   use 'morhetz/gruvbox'
