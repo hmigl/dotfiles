@@ -25,6 +25,16 @@ require('packer').startup(function(use)
     }
   }
 
+  use { -- Autocompletion
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip', 'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+    },
+    config = get_setup('nvim_cmp'),
+  }
+
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' }, config = get_setup('telescope'), }
 
