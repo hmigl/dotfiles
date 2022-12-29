@@ -1,47 +1,33 @@
-local opts = { noremap = true, silent = true }
-local term_opts = { silent = true }
-local map = vim.keymap.set
-
+-- [[ Basic Keymaps ]]
 vim.g.mapleader = ' '
 
--- Better split navigation
-map('n', '<C-h>', '<C-w>h', opts)
-map('n', '<C-j>', '<C-w>j', opts)
-map('n', '<C-k>', '<C-w>k', opts)
-map('n', '<C-l>', '<C-w>l', opts)
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+vim.keymap.set('n', '<leader>e', vim.cmd.Ex, { silent = true} )
 
--- Buffer navigation
--- map('n', '<leader>h', ':bprevious<CR>', opts)
--- map('n', '<leader>l', ':bnext<CR>', opts)
+--
+vim.keymap.set('n', ',sv', '<C-w>v')
+vim.keymap.set('n', ',sh', '<C-w>s')
+vim.keymap.set('n', ',se', '<C-w>=')
+vim.keymap.set('n', ',sx', ':close<CR>')
 
--- Tab navigation
-map('n', '<leader>th', ':tabprevious<CR>', opts)
-map('n', '<leader>tl', ':tabnext<CR>', opts)
+vim.keymap.set('n', ',to', ':tabnew<CR>')
+vim.keymap.set('n', ',tx', ':tabclose<CR>')
 
--- Resize splits
-map('n', '<C-Left>', ':vertical resize +2<CR>', opts)
-map('n', '<C-Right>', ':vertical resize -2<CR>', opts)
-map('n', '<C-Up>', ':resize +2<CR>', opts)
-map('n', '<C-Down>', ':resize -2<CR>', opts)
+-- Move text
+vim.keymap.set('v', '<A-j>', ':m \'>+1<CR>gv=gv')
+vim.keymap.set('v', '<A-k>', ':m \'<-2<CR>gv=gv')
 
--- Saving/quitting
-map('n', '<C-s>', ':w<CR>', opts)
--- map('n', '<C-q>', ':q<CR>', opts)
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { silent = true })
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { silent = true })
 
--- Move text...
--- ...in normal mode
-map('n', '<A-j>', ':m .+1<CR>==', opts)
-map('n', '<A-k>', ':m .-2<CR>==', opts)
--- ...in visual mode
-map('v', '<A-j>', ':m \'>+1<CR>==gv=gv', opts)
-map('v', '<A-k>', ':m \'<-2<CR>==gv=gv', opts)
+-- Don't lose cursor when moving
+vim.keymap.set('n', '<C-d>', "<C-d>zz")
+vim.keymap.set('n', '<C-u>', "<C-u>zz")
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
 
--- Check file in shellcheck
-map('n', '<leader>s', ':!clear && shellcheck %<CR>', opts)
+--
+vim.keymap.set('n', ',rn', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
--- Plugin mappings
--- Telescope
-map('n', '<leader>ff', '<cmd>lua require\'telescope.builtin\'.find_files()<CR>', opts)
-map('n', '<leader>fb', '<cmd>lua require\'telescope.builtin\'.buffers()<CR>', opts)
-map('n', '<leader>fg', '<cmd>lua require\'telescope.builtin\'.live_grep()<CR>', opts)
-map('n', '<leader>fs', '<cmd>lua require\'telescope.builtin\'.grep_string({ search = vim.fn.input("Grep For > ")})<CR>', opts)
+--
+vim.keymap.set('n', '<leader>n', ':!clear && norminette %<CR>')

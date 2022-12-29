@@ -1,9 +1,10 @@
-local colorscheme = "tokyonight"
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+local colorscheme = 'codedark'
+local status_ok, _ = pcall(vim.cmd, 'colorscheme ' .. colorscheme)
 if not status_ok then
-	vim.notify("colorscheme " .. colorscheme .. " not found")
-	return
+  vim.notify('colorsheme ' .. colorscheme .. 'not found')
+  return
 end
 
--- Use a colorscheme, but make background transparent
-vim.cmd('hi Normal guibg=NONE')
+-- Use a colorscheme with a transparent background
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
