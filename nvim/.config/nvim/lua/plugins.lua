@@ -63,6 +63,18 @@ require('packer').startup(function(use)
     config = get_setup('lualine'),
   }
 
+  -- 42
+  use {
+    '42Paris/42header',
+    requires = { 'vinicius507/norme.nvim', config = get_setup('norme42') },
+    config = function()
+      vim.cmd[[
+      let g:user42 = 'hmigl'
+      let g:mail42 = 'hmigl@student.42sp.org.br'
+      ]]
+    end,
+  }
+
   -- Colorshcemes
   use 'morhetz/gruvbox'
   use 'tomasiser/vim-code-dark'
