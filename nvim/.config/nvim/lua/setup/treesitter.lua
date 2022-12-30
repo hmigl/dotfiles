@@ -29,4 +29,7 @@ require'nvim-treesitter.configs'.setup {
       node_decremental = '<c-backspace>',
     },
   },
+  rainbow = {
+    enable = true,
+  },
 }
