@@ -47,6 +47,9 @@ require('packer').startup(function(use)
     config = get_setup('treesitter'),
   }
 
+  -- Inject LSP diagnostics, formatters, and more
+  use { 'jose-elias-alvarez/null-ls.nvim', config = get_setup('null_ls') }
+
   use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end }
   use 'tpope/vim-surround' -- Easily surround text objects
   use { 'windwp/nvim-autopairs', config = get_setup('autopairs') } -- auto closing
