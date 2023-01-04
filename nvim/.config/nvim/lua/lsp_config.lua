@@ -26,8 +26,7 @@ local on_attach = function(_, bufnr)
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
   nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
-
-  --
+  nmap('<leader>lf', vim.lsp.buf.format, '[L]SP [F]ormat')
 end
 
 require("mason").setup({

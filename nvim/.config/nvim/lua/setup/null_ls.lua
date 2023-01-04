@@ -4,10 +4,12 @@ if not status_ok then
 end
 
 local diagnostics = null_ls.builtins.diagnostics
+local formatting = null_ls.builtins.formatting
 
 null_ls.setup({
   sources = {
     diagnostics.clang_check,
-    -- diagnostics.cpplint.with({ filetypes = {"cpp"}, }), -- Check google's cpp style guide
+    diagnostics.cpplint.with({ filetypes = {"cpp"}, }), -- Check google's cpp style guide
+    formatting.clang_format,
   },
 })
