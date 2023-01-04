@@ -1,6 +1,14 @@
 -- [[nvim cmp]]
-local cmp = require('cmp')
-local luasnip = require('luasnip')
+local status_ok, cmp = pcall(require, 'cmp')
+if not status_ok then
+  return
+end
+
+local luasnip
+status_ok, luasnip = pcall(require, 'luasnip')
+if not status_ok then
+  return
+end
 
 cmp.setup {
   snippet = {
@@ -46,3 +54,5 @@ cmp.setup {
     { name = 'path' },
   },
 }
+
+require('luasnip/loaders/from_vscode').lazy_load()
