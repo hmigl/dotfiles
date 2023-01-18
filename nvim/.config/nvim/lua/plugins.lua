@@ -75,6 +75,9 @@ require('packer').startup(function(use)
     end,
   }
 
+  -- Annotation generator
+  use { 'danymat/neogen', config = get_setup('neogen') }
+
   -- Colorshcemes
   use 'morhetz/gruvbox'
   use 'tomasiser/vim-code-dark'
