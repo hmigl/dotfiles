@@ -27,6 +27,7 @@ local on_attach = function(_, bufnr)
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
   nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
   nmap('<leader>lf', vim.lsp.buf.format, '[L]SP [F]ormat')
+  nmap(',,', vim.lsp.buf.hover, 'Display hover information ')
 end
 
 require("mason").setup({
