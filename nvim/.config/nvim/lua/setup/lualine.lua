@@ -4,4 +4,5 @@ if not status then
 end
 
 lualine.setup({
+  options = { theme = 'moonfly' },
 })
