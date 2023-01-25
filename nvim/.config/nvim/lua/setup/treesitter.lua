@@ -1,7 +1,11 @@
 -- [[ Configure treesitter ]]
 -- See `:help nvim-treesitter`
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "cpp", "lua", "make", "bash", "java", "help" },
+  ensure_installed = {
+    "c", "cpp", "lua", "make", "bash", "java",
+    "help", "html", "css", "javascript", "typescript",
+    "sql", "gitignore", "gitcommit", "dockerfile"
+  },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
