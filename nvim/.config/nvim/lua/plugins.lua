@@ -66,7 +66,7 @@ require('packer').startup(function(use)
   -- 42
   use {
     '42Paris/42header',
-    requires = { 'vinicius507/norme.nvim', config = get_setup('norme42') },
+    requires = { 'vinicius507/norme.nvim', config = get_setup('norme42'), commit = '656a57577c7fb6731fc6069a5be40e9aa4184297' },
     config = function()
       vim.cmd[[
       let g:user42 = 'hmigl'
