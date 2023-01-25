@@ -30,3 +30,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+
+vim.api.nvim_create_autocmd( { 'BufRead', 'BufNewFile'}, {
+  pattern = '*.h',
+  command = 'setfiletype c',
+})
