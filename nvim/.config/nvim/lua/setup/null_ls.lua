@@ -8,8 +8,13 @@ local formatting = null_ls.builtins.formatting
 
 null_ls.setup({
   sources = {
+    -- C/C++
     diagnostics.clang_check,
     diagnostics.cpplint.with({ filetypes = {"cpp"}, }), -- Check google's cpp style guide
     formatting.clang_format,
+
+    -- Web ecosystem
+    diagnostics.eslint,
+    formatting.prettier,
   },
 })
