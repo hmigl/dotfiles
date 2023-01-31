@@ -82,6 +82,7 @@ require('packer').startup(function(use)
   use 'morhetz/gruvbox'
   use 'tomasiser/vim-code-dark'
   use 'folke/tokyonight.nvim'
+  use 'rose-pine/neovim'
 
   if is_bootstrap then
     require('packer').sync()
