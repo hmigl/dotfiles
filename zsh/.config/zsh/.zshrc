@@ -66,6 +66,9 @@ bindkey '^e' edit-command-line
 
 bindkey '^R' history-incremental-search-backward
 
+# Load asdf
+[[ -f /opt/asdf-vm/asdf.sh ]] && . /opt/asdf-vm/asdf.sh
+
 # Load syntax highlighting and autosuggestions; should be last
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null

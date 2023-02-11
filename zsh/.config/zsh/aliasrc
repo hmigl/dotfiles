@@ -11,6 +11,7 @@ alias \
   rm="rm -Iv" \
   mkdir="mkdir -v" \
   ytv="yt-dlp -f 22 -i" \
+  ytv2="yt-dlp -f 18 -i" \
   yta="yt-dlp -f 140 -i" \
   ytf="yt-dlp -F"
 
@@ -20,6 +21,6 @@ alias \
   sp="sudo pacman" \
   df="df -h --total" \
   ka="killall" \
-  sd="sudo docker"
+  dots="cd ~/.dotfiles"
 
 se() { du -a ~/.dotfiles | awk '{print $2}' | fzf | xargs -r $EDITOR }

@@ -22,5 +22,7 @@ export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export AWT_TOOLKIT="MToolkit wmname LG3D"
 export _JAVA_AWT_WM_NONREPARENTING=1 # Fix for Java applications in dwm
 
+export VALGRIND_LIB="/usr/lib/valgrind"
+
 # Disable files
 export LESSHISTFILE=-
