@@ -9,10 +9,10 @@ cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
 
 cmd open ${{
   case $(file --mime-type "$f" -b) in
-    text/*) $EDITOR $fx;;
-    audio/*) mpv --audio-display=no "$f" ;;
+    text/*) $EDITOR $fx ;;
+    audio/*) mpv "$f" ;;
     video/*) setsid -f mpv "$f" -quiet >/dev/null 2>&1 ;;
-    *) $OPENER "$f";;
+    *) $OPENER "$f" ;;
   esac
 }}
 
