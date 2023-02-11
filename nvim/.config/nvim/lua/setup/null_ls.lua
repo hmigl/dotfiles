@@ -13,6 +13,9 @@ null_ls.setup({
     diagnostics.cpplint.with({ filetypes = {"cpp"}, }), -- Check google's cpp style guide
     formatting.clang_format,
 
+    -- shell
+    diagnostics.shellcheck,
+
     -- Web ecosystem
     diagnostics.eslint,
     formatting.prettier,
