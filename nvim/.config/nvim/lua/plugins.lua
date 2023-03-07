@@ -78,6 +78,8 @@ require('packer').startup(function(use)
   -- Annotation generator
   use { 'danymat/neogen', config = get_setup('neogen') }
 
+  use { 'mbbill/undotree', config = get_setup('undotree') }
+
   -- Colorshcemes
   use 'morhetz/gruvbox'
   use 'tomasiser/vim-code-dark'

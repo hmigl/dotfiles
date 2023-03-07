@@ -21,6 +21,9 @@ vim.opt.cursorline = true      -- Draw an extra column
 
 vim.opt.swapfile = false       -- Don't use a 'swapfile'
 
+vim.opt.undofile = true
+vim.opt.undodir = os.getenv("HOME") .. '/.local/share/nvim/undodir'
+
 -- [[ Highlight on yank ]]
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
