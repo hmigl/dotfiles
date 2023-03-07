@@ -40,7 +40,7 @@ require('packer').startup(function(use)
 
   use { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
-    requires = { 'p00f/nvim-ts-rainbow' },
+    requires = { 'p00f/nvim-ts-rainbow', 'nvim-treesitter/nvim-treesitter-textobjects' },
     run = function()
       pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
