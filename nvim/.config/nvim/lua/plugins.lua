@@ -19,9 +19,9 @@ require('packer').startup(function(use)
   use { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     requires = {
-    -- Automatically install LSPs to stdpath for neovim
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
+      -- Automatically install LSPs to stdpath for neovim
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
     }
   }
 
@@ -51,8 +51,10 @@ require('packer').startup(function(use)
   use { 'jose-elias-alvarez/null-ls.nvim', config = get_setup('null_ls') }
 
   use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end }
+
   use 'tpope/vim-surround' -- Easily surround text objects
-  use { 'windwp/nvim-autopairs', config = get_setup('autopairs') } -- auto closing
+
+  use { 'windwp/nvim-autopairs', config = get_setup('autopairs') } -- Auto closing
 
   -- Add indentation guides even on blank lines
   use { 'lukas-reineke/indent-blankline.nvim', config = get_setup('indent_blankline'), }
@@ -66,17 +68,13 @@ require('packer').startup(function(use)
   -- 42
   use {
     '42Paris/42header',
-    requires = { 'vinicius507/norme.nvim', config = get_setup('norme42'), commit = '656a57577c7fb6731fc6069a5be40e9aa4184297' },
     config = function()
-      vim.cmd[[
+      vim.cmd [[
       let g:user42 = 'hmigl'
       let g:mail42 = 'hmigl@student.42sp.org.br'
       ]]
     end,
   }
-
-  -- Annotation generator
-  use { 'danymat/neogen', config = get_setup('neogen') }
 
   use { 'mbbill/undotree', config = get_setup('undotree') }
 
