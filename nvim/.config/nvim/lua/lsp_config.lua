@@ -28,6 +28,7 @@ local on_attach = function(_, bufnr)
   nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
   nmap('<leader>lf', vim.lsp.buf.format, '[L]SP [F]ormat')
   nmap(',,', vim.lsp.buf.hover, 'Display hover information ')
+  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 end
 
 require("mason").setup({
