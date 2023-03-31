@@ -10,8 +10,8 @@ null_ls.setup({
   sources = {
     -- C/C++
     diagnostics.clang_check,
-    diagnostics.cpplint.with({ filetypes = {"cpp"}, }), -- Check google's cpp style guide
-    formatting.clang_format,
+    diagnostics.cpplint.with({ filetypes = { "cpp" }, }), -- Check google's cpp style guide
+    formatting.clang_format.with({ extra_args = { "--style=Google" } }),
 
     -- shell
     diagnostics.shellcheck,
