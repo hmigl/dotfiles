@@ -78,6 +78,10 @@ require('packer').startup(function(use)
 
   use { 'mbbill/undotree', config = get_setup('undotree') }
 
+  -- Git stuff
+  use 'tpope/vim-fugitive'
+  use { 'lewis6991/gitsigns.nvim', config = get_setup('gitsigns') }
+
   -- Colorshcemes
   use 'morhetz/gruvbox'
   use 'tomasiser/vim-code-dark'
