@@ -13,6 +13,9 @@ null_ls.setup({
     diagnostics.cpplint.with({ filetypes = { "cpp" }, }), -- Check google's cpp style guide
     formatting.clang_format.with({ extra_args = { "--style=Google" } }),
 
+    -- python
+    formatting.black,
+
     -- shell
     diagnostics.shellcheck,
 
