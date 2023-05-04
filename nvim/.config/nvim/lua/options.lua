@@ -26,6 +26,8 @@ vim.opt.undodir = os.getenv("HOME") .. '/.local/share/nvim/undodir'
 
 vim.opt.ls = 3                 -- global statusline
 
+vim.opt.wbr = '%=%m %f'
+
 -- [[ Highlight on yank ]]
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {
