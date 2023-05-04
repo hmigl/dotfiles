@@ -19,7 +19,13 @@ super + r
 	$TERMINAL -e lf
 
 super + g
-	$TERMINAL -e btop
+	$TERMINAL -e htop
+
+super + i
+	intellij-idea-ultimate-edition
+
+super + comma
+	tdrop -am -n0 $TERMINAL -t dropdown -o window.opacity=1
 
 # Print screen
 Print

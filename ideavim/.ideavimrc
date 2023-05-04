@@ -54,6 +54,7 @@ nmap <leader>Q <Action>(ReopenClosedTab)
 
 " total focus
 nmap ,z <Action>(HideAllWindows)
+nmap <leader>,z <Action>(ToggleDistractionFreeMode)
 
 " run code
 nmap \R <Action>(Run)
