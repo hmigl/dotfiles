@@ -36,11 +36,13 @@ require('packer').startup(function(use)
   }
 
   -- Fuzzy Finder (files, lsp, etc)
-  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' }, config = get_setup('telescope'), }
+  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' }, config = get_setup(
+    'telescope'), }
 
   use { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
-    requires = { 'p00f/nvim-ts-rainbow', 'nvim-treesitter/nvim-treesitter-textobjects', 'nvim-treesitter/nvim-treesitter-context' },
+    requires = { 'p00f/nvim-ts-rainbow', 'nvim-treesitter/nvim-treesitter-textobjects',
+      'nvim-treesitter/nvim-treesitter-context' },
     run = function()
       pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
@@ -52,7 +54,7 @@ require('packer').startup(function(use)
 
   use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end }
 
-  use 'tpope/vim-surround' -- Easily surround text objects
+  use 'tpope/vim-surround'                                         -- Easily surround text objects
 
   use { 'windwp/nvim-autopairs', config = get_setup('autopairs') } -- Auto closing
 
@@ -83,10 +85,8 @@ require('packer').startup(function(use)
   use { 'lewis6991/gitsigns.nvim', config = get_setup('gitsigns') }
 
   -- Colorshcemes
-  use 'morhetz/gruvbox'
-  use 'tomasiser/vim-code-dark'
-  use 'folke/tokyonight.nvim'
   use 'rose-pine/neovim'
+  use 'EdenEast/nightfox.nvim'
 
   if is_bootstrap then
     require('packer').sync()
