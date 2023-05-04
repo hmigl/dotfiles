@@ -5,8 +5,8 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', '<leader>e', vim.cmd.Ex, { silent = true} )
 
 --
-vim.keymap.set('n', ',sv', '<C-w>v')
-vim.keymap.set('n', ',sh', '<C-w>s')
+vim.keymap.set('n', ',sv', '<C-w>v<C-w>l')
+vim.keymap.set('n', ',sh', '<C-w>s<C-w>j')
 vim.keymap.set('n', ',se', '<C-w>=')
 vim.keymap.set('n', ',sx', ':close<CR>')
 
