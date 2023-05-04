@@ -1,6 +1,6 @@
 set statusbar-v-padding 0
 set statusbar-h-padding 0
-set recolor true
+# set recolor true
 
 map J zoom out
 map K zoom in
