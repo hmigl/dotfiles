@@ -1,8 +1,9 @@
 local status, lualine = pcall(require, 'lualine')
+
 if not status then
-  return
+    return
 end
 
 lualine.setup({
-  options = { theme = 'moonfly' },
+    options = { theme = "moonfly" },
 })

@@ -1,5 +1,1 @@
-require('plugins')
-require('options')
-require('mappings')
-require('colorscheme')
-require('lsp_config')
+require("hmigl")
