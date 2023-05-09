@@ -11,15 +11,29 @@ lsp.ensure_installed({
 lsp.nvim_workspace()
 
 local cmp = require('cmp')
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
-    ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<CR>'] = cmp.mapping.confirm({
+    ["<CR>"] = cmp.mapping.confirm({
         select = true,
         behavior = cmp.ConfirmBehavior.Replace,
     }),
+
     ["<C-Space>"] = cmp.mapping.complete(),
+
+    ["<C-j>"] = cmp.mapping(function()
+        if cmp.visible() then
+            cmp.select_next_item()
+        else
+            cmp.complete()
+        end
+    end),
+
+    ["<C-k>"] = cmp.mapping(function()
+        if cmp.visible() then
+            cmp.select_prev_item()
+        else
+            cmp.complete()
+        end
+    end),
 })
 
 lsp.setup_nvim_cmp({
@@ -53,6 +67,16 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
+require('luasnip.loaders.from_vscode').lazy_load()
+cmp.setup({
+    sources = {
+        { name = 'nvim_lsp' },
+        { name = 'luasnip', keyword_length = 2 },
+        { name = 'path' },
+        { name = 'buffer',  keyword_length = 3 },
+    }
+})
 
 vim.diagnostic.config({
     virtual_text = true
