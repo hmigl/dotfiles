@@ -1,82 +1,76 @@
-" set space as leader key
+""" Map leader to space ---------------------
 let mapleader=" "
 
-" plugins
+""" Plugins  --------------------------------
 set commentary
 set highlightedyank
 set surround
 set NERDTree
+
+""" Plugins mappings/configs  --------------------------------
 let g:NERDTreeMapActivateNode='l'
 let g:NERDTreeMapJumpParent='h'
+nmap <leader>e :NERDTree<cr>
 
-" vim options
-set clipboard+=unnamed
+""" Common settings -------------------------
 set nohlsearch
-set number relativenumber " show line numbers
-set scrolloff=5 " show a few lines of context around the cursor
-set incsearch " do incremental searching.
-set ignorecase " ignore case in search patterns
-set incsearch " show where search pattern typed so far matches...
-set smartcase " ...but don't ignore case when pattern is uppercase
+set number
+set relativenumber
+set scrolloff=5
+set incsearch
+set ignorecase
+set smartcase
 
-" join lines smartly
+""" Idea specific settings ------------------
 set ideajoin
 
-" mappings
+""" Mappings --------------------------------
 " don't use Ex mode, use Q for formatting.
 map Q gq
 
-" git
-nmap <leader>m <Action>(Git.Menu)
+nmap ,sv <Action>(SplitVertically)
+nmap ,sh <Action>(SplitHorizontally)
+nmap ,sm <Action>(MoveEditorToOppositeTabGroup)
+nmap :q <Action>(CloseAllEditors)
 
-" refactoring
-nmap <leader>i <Action>(Generate)
+nmap <leader>gs <Action>(Vcs.Show.Local.Changes)
+nmap <leader>gm <Action>(Git.Menu)
+
+nmap <leader>gn <Action>(Generate)
+nmap <leader>oi <Action>(OptimizeImports)
+
 nmap <leader>rn <Action>(RenameElement)
-nmap ,i <Action>(OptimizeImports)
 nmap <leader>lf <Action>(ReformatCode)
+nmap <leader>ca <Action>(QuickActionPopup)
+nmap <leader>vd <Action>(ShowErrorDescription)
+nmap [d <Action>(GotoPreviousError)
+nmap ]d <Action>(GotoNextError)
 
-" navigation
-nmap <leader>o <Action>(FileStructurePopup)
 nmap <leader>ff <Action>(GotoFile)
-"nmap <leader>fi <Action>(GotoImplementation)
-nmap <leader>fw <Action>(FindUsages)
-nmap <leader>c <Action>(GotoClass)
-nmap ]m <Action>(MethodDown)
-nmap [m <Action>(MethodUp)
+nmap <leader>fb <Action>(RecentFiles)
+nmap <leader>rr <Action>(FindUsages)
 
-" quickly move between windows
-nmap <c-h> <c-w>h
-nmap <c-l> <c-w>l
-nmap <c-k> <c-w>k
-nmap <c-j> <c-w>j
-
-nmap <leader>Q <Action>(ReopenClosedTab)
-
-" total focus
-nmap ,z <Action>(HideAllWindows)
-nmap <leader>,z <Action>(ToggleDistractionFreeMode)
-
-" run code
 nmap \R <Action>(Run)
 nmap \r <Action>(RunClass)
 nmap \s <Action>(Stop)
-nmap <leader>t <Action>(ActivateTerminalToolWindow)
 
-" debug code
 nmap \b <Action>(ToggleLineBreakpoint)
 nmap \d <Action>(Debug)
 
-" use built-ins!
+nmap <leader>t <Action>(ActivateTerminalToolWindow)
+nmap <leader>pt <Action>(Terminal.OpenInTerminal)
+
 nmap <C-o> <Action>(Back)
 nmap <C-i> <Action>(Forward)
 
 nmap / <Action>(Find)
 
-" useful
 nmap ,, <Action>(QuickJavaDoc)
 nmap <C-=> <Action>(EditorIncreaseFontSize)
 nmap <C--> <Action>(EditorDecreaseFontSize)
 
-" plugin mappings
-map <leader>e :NERDTree<CR>
-map <leader>ef :NERDTreeFind<CR>
+vmap <leader>y "+y
+nmap <leader>y "+y
+nmap <leader>p "+p
+
+nmap ,zz <Action>(ToggleDistractionFreeMode)
