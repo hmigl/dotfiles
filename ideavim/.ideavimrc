@@ -28,35 +28,34 @@ set ideajoin
 " don't use Ex mode, use Q for formatting.
 map Q gq
 
-nmap ,sv <Action>(SplitVertically)
-nmap ,sh <Action>(SplitHorizontally)
 nmap ,sm <Action>(MoveEditorToOppositeTabGroup)
-nmap :q <Action>(CloseAllEditors)
+nmap __ <Action>(Unsplit)
 
+""" Git integration -------------------------
 nmap <leader>gs <Action>(Vcs.Show.Local.Changes)
 nmap <leader>gm <Action>(Git.Menu)
 
-nmap <leader>gn <Action>(Generate)
-nmap <leader>oi <Action>(OptimizeImports)
-
+""" Looks like LSP -------------------------
 nmap <leader>rn <Action>(RenameElement)
 nmap <leader>lf <Action>(ReformatCode)
-nmap <leader>ca <Action>(QuickActionPopup)
+nmap <leader>ca <Action>(ShowIntentionActions)
 nmap <leader>vd <Action>(ShowErrorDescription)
 nmap [d <Action>(GotoPreviousError)
 nmap ]d <Action>(GotoNextError)
+nmap <leader>gn <Action>(Generate)
+nmap <leader>oi <Action>(OptimizeImports)
+nmap ,, <Action>(QuickJavaDoc)
 
+""" Looks like Telescope --------------------
 nmap <leader>ff <Action>(GotoFile)
 nmap <leader>fb <Action>(RecentFiles)
 nmap <leader>rr <Action>(FindUsages)
 
-nmap \R <Action>(Run)
-nmap \r <Action>(RunClass)
-nmap \s <Action>(Stop)
+""" Looks like Treesitter -------------------
+nmap ]m <Action>(MethodDown)
+nmap [m <Action>(MethodUp)
 
-nmap \b <Action>(ToggleLineBreakpoint)
-nmap \d <Action>(Debug)
-
+""" Outro ----------------------------------
 nmap <leader>t <Action>(ActivateTerminalToolWindow)
 nmap <leader>pt <Action>(Terminal.OpenInTerminal)
 
@@ -65,7 +64,6 @@ nmap <C-i> <Action>(Forward)
 
 nmap / <Action>(Find)
 
-nmap ,, <Action>(QuickJavaDoc)
 nmap <C-=> <Action>(EditorIncreaseFontSize)
 nmap <C--> <Action>(EditorDecreaseFontSize)
 
@@ -74,3 +72,16 @@ nmap <leader>y "+y
 nmap <leader>p "+p
 
 nmap ,zz <Action>(ToggleDistractionFreeMode)
+
+nmap <A-j> <Action>(MoveLineDown)
+nmap <A-k> <Action>(MoveLineUp)
+
+nmap <C-d> <C-d>zz
+nmap <C-u> <C-u>zz
+
+""" Idea specific ------------------
+nmap \R <Action>(Run)
+nmap \r <Action>(RunClass)
+nmap \s <Action>(Stop)
+nmap \b <Action>(ToggleLineBreakpoint)
+nmap \d <Action>(Debug)
