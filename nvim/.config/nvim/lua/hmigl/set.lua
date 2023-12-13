@@ -38,3 +38,6 @@ vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
     pattern = '*.h',
     command = 'setfiletype c',
 })
+
+vim.opt.list = true
+vim.opt.listchars:append "eol:↴"

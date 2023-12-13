@@ -1,56 +1,4 @@
-local lsp = require("lsp-zero")
-
-lsp.preset("recommended")
-
-lsp.ensure_installed({
-    'clangd',
-    'lua_ls',
-})
-
--- Fix Undefined global 'vim'
-lsp.nvim_workspace()
-
-local cmp = require('cmp')
-local cmp_mappings = lsp.defaults.cmp_mappings({
-    ["<CR>"] = cmp.mapping.confirm({
-        select = true,
-        behavior = cmp.ConfirmBehavior.Replace,
-    }),
-
-    ["<C-Space>"] = cmp.mapping.complete(),
-
-    ["<C-j>"] = cmp.mapping(function()
-        if cmp.visible() then
-            cmp.select_next_item()
-        else
-            cmp.complete()
-        end
-    end),
-
-    ["<C-k>"] = cmp.mapping(function()
-        if cmp.visible() then
-            cmp.select_prev_item()
-        else
-            cmp.complete()
-        end
-    end),
-})
-
-lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
-})
-
-lsp.set_preferences({
-    suggest_lsp_servers = false,
-    sign_icons = {
-        error = 'E',
-        warn = 'W',
-        hint = 'H',
-        info = 'I'
-    }
-})
-
-lsp.on_attach(function(client, bufnr)
+local on_attach = function(_, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
@@ -65,20 +13,48 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
     vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, opts)
     -- vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help(), opts)
-end)
+end
 
-lsp.setup()
+require('mason').setup()
+require('mason-lspconfig').setup()
 
-require('luasnip.loaders.from_vscode').lazy_load()
-cmp.setup({
-    sources = {
-        { name = 'nvim_lsp' },
-        { name = 'luasnip', keyword_length = 2 },
-        { name = 'path' },
-        { name = 'buffer',  keyword_length = 3 },
-    }
-})
+local servers = {
+    -- clangd = {},
+    -- gopls = {},
+    -- pyright = {},
 
-vim.diagnostic.config({
-    virtual_text = true
-})
+    lua_ls = {
+        Lua = {
+            workspace = { checkThirdParty = false },
+            telemetry = { enable = false },
+            -- NOTE: toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+            -- diagnostics = { disable = { 'missing-fields' } },
+        },
+    },
+}
+
+
+-- Setup neovim lua configuration
+require('neodev').setup()
+
+-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+-- Ensure the servers above are installed
+local mason_lspconfig = require 'mason-lspconfig'
+
+mason_lspconfig.setup {
+    ensure_installed = vim.tbl_keys(servers),
+}
+
+mason_lspconfig.setup_handlers {
+    function(server_name)
+        require('lspconfig')[server_name].setup {
+            capabilities = capabilities,
+            on_attach = on_attach,
+            settings = servers[server_name],
+            filetypes = (servers[server_name] or {}).filetypes,
+        }
+    end,
+}
