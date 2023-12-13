@@ -21,7 +21,6 @@ local plugins = {
 
     -- Improve edition experience
     {
-        -- gottem
         'theprimeagen/harpoon',
         branch = 'harpoon2'
     },
@@ -94,6 +93,9 @@ local plugins = {
             'rafamadriz/friendly-snippets',
         },
     },
+
+    -- NOTE: null-ls is archieved, but it still works
+    'jose-elias-alvarez/null-ls.nvim'
 }
 
 require("lazy").setup(plugins, {})
