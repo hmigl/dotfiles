@@ -19,9 +19,9 @@ require('mason').setup()
 require('mason-lspconfig').setup()
 
 local servers = {
-    -- clangd = {},
-    -- gopls = {},
-    -- pyright = {},
+    clangd = {},
+    gopls = {},
+    pyright = {},
 
     lua_ls = {
         Lua = {
