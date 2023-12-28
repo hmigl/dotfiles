@@ -1,0 +1,35 @@
+#
+#  █████╗ ██╗      █████╗  ██████╗██████╗ ██╗████████╗████████╗██╗   ██╗
+# ██╔══██╗██║     ██╔══██╗██╔════╝██╔══██╗██║╚══██╔══╝╚══██╔══╝╚██╗ ██╔╝
+# ███████║██║     ███████║██║     ██████╔╝██║   ██║      ██║    ╚████╔╝ 
+# ██╔══██║██║     ██╔══██║██║     ██╔══██╗██║   ██║      ██║     ╚██╔╝  
+# ██║  ██║███████╗██║  ██║╚██████╗██║  ██║██║   ██║      ██║      ██║   
+# ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝   ╚═╝      ╚═╝      ╚═╝   
+#
+
+[window]
+padding = {x=8, y=8}
+dynamic_padding = false
+opacity = 0.95
+dynamic_title = true
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[font]
+normal = {family = "Ubuntu Mono Nerd Font", style = "Regular"}
+size = 10
+
+[cursor]
+style = {shape = "Block", blinking = "Never"}
+
+[keyboard]
+bindings = [
+{key = "C", mods = "Alt", action = "Copy"},
+{key = "V", mods = "Alt", action = "Paste"},
+{key = "Insert", mods = "Shift", action = "PasteSelection"},
+{key = "K", mods = "Alt|Shift", action = "IncreaseFontSize"},
+{key = "J", mods = "Alt|Shift", action = "DecreaseFontSize"},
+{key = "Return", mods = "Alt|Shift", action = "SpawnNewInstance"},
+]
