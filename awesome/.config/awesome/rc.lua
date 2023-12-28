@@ -236,8 +236,8 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
-    awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
-              {description="show help", group="awesome"}),
+    -- awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
+    --           {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "bracketleft",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
     awful.key({ modkey,           }, "bracketright",  awful.tag.viewnext,
@@ -324,11 +324,11 @@ globalkeys = gears.table.join(
 
     -- Prompt
     awful.key({ modkey },            "d",     function () awful.screen.focused().mypromptbox:run() end,
-              {description = "run prompt", group = "launcher"}),
+              {description = "run prompt", group = "launcher"})
 
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+    -- awful.key({ modkey }, "p", function() menubar.show() end,
+    --           {description = "show the menubar", group = "launcher"})
 )
 
 clientkeys = gears.table.join(
